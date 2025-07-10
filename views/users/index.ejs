@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Users</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>All Users</h2>
+
+    <a href="/users/new" class="btn primary-btn">➕ Add New User</a>
+
+    <% if (users.length === 0) { %>
+      <p class="empty-msg">No users yet. Click the button above to add one!</p>
+    <% } else { %>
+      <div class="user-list">
+        <% users.forEach(user => { %>
+          <div class="user-card">
+            <p><strong>Name:</strong> <%= user.name %></p>
+            <p><strong>Age:</strong> <%= user.age %></p>
+            <p><strong>City:</strong> <%= user.city %></p>
+
+            <div class="actions">
+              <a href="/users/<%= user._id %>/edit" class="btn edit-btn">✏️ Edit</a>
+
+              <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                <button class="btn delete-btn" type="submit">🗑️ Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

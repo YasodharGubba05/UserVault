@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New User</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>➕ Add a New User</h2>
+
+    <form action="/users" method="POST" class="user-form">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" required>
+
+      <label for="city">City:</label>
+      <input type="text" name="city" id="city" required>
+
+      <button type="submit" class="btn primary-btn">Create User</button>
+    </form>
+
+    <a href="/users" class="btn edit-btn">← Back to All Users</a>
+  </div>
+</body>
+</html>
