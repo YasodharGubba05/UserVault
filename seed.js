@@ -14,5 +14,4 @@ async function seedDB() {
   console.log("Sample users inserted");
   mongoose.connection.close();
 }
-
 seedDB();
